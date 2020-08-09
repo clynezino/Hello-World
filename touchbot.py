@@ -59,7 +59,7 @@ def getMessage():
 
 @server.route('/hook')
 def webhook():
-    url = url
+    url = "touchbot-christ.heroku.com"
     bot.remove_webhook()
     bot.set_webhook(url + token)
     return f"Webhook set to {url}"
