@@ -1,5 +1,3 @@
-
-
 import os
 import telebot
 import flask
@@ -8,7 +6,7 @@ server = flask.Flask(__name__)
 
 debug = False
 
-BOT_API_TOKEN = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
+BOT_API_TOKEN = "BOT_TOKEN"
 bot = telebot.TeleBot(BOT_API_TOKEN)
 
 @bot.message_handler(commands=['start'])
