@@ -1,5 +1,3 @@
-
-
 import os
 import telebot
 import flask
