@@ -51,8 +51,7 @@ def handle_docs_video(message):
 
 @server.route('/' + token, methods=['POST'])
 def getMessage():
-    req = "request"
-    request_object = req.stream.read().decode("utf-8")
+    request_object = request.stream.read().decode("utf-8")
     update_to_json = [telebot.types.Update.de_json(request_object)]
     bot.process_new_updates(update_to_json)
     return "got Message bro"
