@@ -1,11 +1,11 @@
 import os
 import telebot
 import flask
+from flask import request
 
 server = flask.Flask(__name__)
 
-debug = False
-
+debug = True
 token = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
 
 bot = telebot.TeleBot(token)
@@ -51,7 +51,8 @@ def handle_docs_video(message):
 
 @server.route('/' + token, methods=['POST'])
 def getMessage():
-    request_object = request.stream.read().decode("utf-8")
+    req = "request"
+    request_object = req.stream.read().decode("utf-8")
     update_to_json = [telebot.types.Update.de_json(request_object)]
     bot.process_new_updates(update_to_json)
     return "got Message bro"
@@ -60,10 +61,14 @@ def getMessage():
 @server.route('/hook')
 def webhook():
     url = "https://touchbot-christ.herokuapp.com/"
+    url =  "https://d48cdcd589f9.ngrok.io/"
     bot.remove_webhook()
     bot.set_webhook(url + token)
     return f"Webhook set to {url}"
 
+@server.route("/")
+def thanks():
+    return f"thanks bro youve reached"
 
 if debug == True:
     bot.remove_webhook()
