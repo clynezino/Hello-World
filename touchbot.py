@@ -5,7 +5,7 @@ from flask import request
 
 server = flask.Flask(__name__)
 
-debug = True
+debug = False
 token = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
 
 bot = telebot.TeleBot(token)
@@ -61,7 +61,6 @@ def getMessage():
 @server.route('/hook')
 def webhook():
     url = "https://touchbot-christ.herokuapp.com/"
-    url =  "https://d48cdcd589f9.ngrok.io/"
     bot.remove_webhook()
     bot.set_webhook(url + token)
     return f"Webhook set to {url}"
