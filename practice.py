@@ -1,3 +1,4 @@
-a, b = 0, 1
-while a < 1000:
-    print(a, end=',')
+BOT_API_TOKEN = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
+
+token = "BOT_API_TOKEN"
+print = token

@@ -8,8 +8,10 @@ server = flask.Flask(__name__)
 
 debug = False
 
-BOT_API_TOKEN = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
-bot = telebot.TeleBot(BOT_API_TOKEN)
+token = "1376743466:AAHX5y87-h7BtqnSmnX2Sa1G61eAnShddrI"
+
+bot = telebot.TeleBot(token)
+
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
